@@ -230,7 +230,7 @@ void Window::buttonPressEqual(wxCommandEvent& evt)
 {
 	std::string input = std::string(textCtrl->GetValue());
 	std::string output = pro->Calculate(input);
-	textCtrl->SetValue(output);
+	textCtrl->SetValue(wxString::Format("%d",output);
 }
 
 void Window::buttonPressClear(wxCommandEvent& evt)
@@ -239,5 +239,9 @@ void Window::buttonPressClear(wxCommandEvent& evt)
 }
 void Window::buttonPressDelete(wxCommandEvent& evt)
 {
-
+	std::string output = tetCtrl->GetValue();
+	if(output.size() > 0)
+	{
+		output.pop_back();
+	}
 }
